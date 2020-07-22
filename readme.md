@@ -15,3 +15,6 @@ Votre prévision apparaîtra alors dans le volet de droite (ou en dessous sur sm
 
 + BINGO : Vous avez eu juste sur votre prévision ? SUPER ! Cliquez donc sur ce bouton ! Il augmentera votre nombre de "wins".
 + RETIRER : Vous vous êtes trompé dans l'écriture de votre prévision ? Pas de problème, cliquez sur ce bouton et la prévision sera supprimée du pool.
+
+## Le site :
+Pour vous rendre directement sur le site, suivez ce lien : [MajorDuky's Bingo](https://MajorDuky.github.io)
