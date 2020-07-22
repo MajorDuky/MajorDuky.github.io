@@ -22,7 +22,6 @@ $("#buttonAdd").click(function () {
     let optionNameCurrent = $("#addBingoOption").val();
     if (optionNameCurrent != "") {
         if($("#errorText").length) {
-            console.log("yeah");
             $("#errorText").remove();
         }
         countOptions++;
@@ -34,8 +33,7 @@ $("#buttonAdd").click(function () {
         newBingoOption = new bingoOption(optionNameCurrent);
         bingoOptionsObject[optionIdCount] = newBingoOption;
         $("#countP").html(countOptions);
-        console.log(bingoOptionsObject);
-        $("#divShow").append(`<div class='card d-inline-block' style="width: 28rem; border-radius: 0px;" id='${newBingoOption.optionId}'><div class='card-body' id='${newBingoOption.optionId}Empty'> <h1 class='card-title h3 text-wrap'>${newBingoOption.optionName}</h5> <div class='card-footer'><button onclick=addWin('${newBingoOption.optionId}') class='btn btn-outline-success w-100' type='button'>BINGO</button> <button onclick=deleteOption('${newBingoOption.optionId}') class='btn btn-outline-danger w-100 mt-3' type='button'>RETIRER</a> </div> </div> </div>`);
+        $("#divShow").append(`<div class='card col-12' style="border-radius: 0px;" id='${newBingoOption.optionId}'><div class='card-body' id='${newBingoOption.optionId}Empty'> <h1 class='card-title h3 text-wrap'>${newBingoOption.optionName}</h5> <div class='card-footer'><button onclick=addWin('${newBingoOption.optionId}') class='btn btn-outline-success w-100' type='button'>BINGO</button> <button onclick=deleteOption('${newBingoOption.optionId}') class='btn btn-outline-danger w-100 mt-3' type='button'>RETIRER</a> </div> </div> </div>`);
         $("#addBingoOption").val("");
     } else {
         if($("#errorText").length) {
