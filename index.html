@@ -15,7 +15,7 @@
 <body>
 	<div style="height: 98vh; float: left; width: 100%; overflow: hidden" id="loadingIcon">
 		<div class="row">
-			<div class="col-12 text-center">
+			<div class="col-xl-12 text-center">
 				<table style="height: 100vh; width: 100%">
 					<tbody>
 						<tr>
@@ -32,16 +32,16 @@
 	</div>
 	<div class="container-fluid" style="height: 100vh; display: none" id="mainContent">
 		<div class="row" style="height: 100vh; background-color: #262729">
-			<div class="col-3 fixed-top" style="height: 100vh; background-color: white; box-shadow: 0px 0px 15px white">
+			<div class="col-xl-3 col-12 fixed-top" style="background-color: white; box-shadow: 0px 0px 15px white" id="leftPannel">
 				<table style="height: 100vh;">
 					<tbody>
 						<tr>
 							<td class="align-middle" id="shittyTD">
 								<div class="row text-center">
-									<div class="col-6 h-100">
+									<div class="col-xl-6 h-100">
 										<h1 class="mb-3">BINGO ! </h1>
 									</div>
-									<div class="col-6 pt-2">
+									<div class="col-xl-6 pt-2">
 										<a href="https://twitch.tv/MajorDuky"><span class="badge badge-info h1 w-100"
 												id="spanCredit" style="opacity: 0.5;">Revisité by <img
 													src="assets/logoMajorDuky.png" alt="logo de la chaîne MajorDuky"
@@ -70,7 +70,7 @@
 								</div>
 
 								<div class="row my-3" id="inputGroup">
-									<div class="col-12">
+									<div class="col-xl-12">
 										<div class="input-group mb-2 h-100">
 											<div class="input-group-prepend h-100">
 												<div class="input-group-text h-100" style="border-radius: 5px 0 0 0">
@@ -81,7 +81,7 @@
 												style="border-radius: 0 5px 0 0">
 										</div>
 									</div>
-									<div class="col-12">
+									<div class="col-xl-12">
 										<button type="button" id="buttonAdd" class="btn btn-outline-info w-100"
 											style="border-radius: 0 0 5px 5px; border-top: none; border-color: lightgrey">Ajouter
 											l'option</button>
@@ -99,11 +99,11 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="offset-3 col-9 float-left mt-3" style="background-color: #262729">
-				<div class="container-fluid overflow-auto">
-					<div class="row text-center justify-content-center">
-						<div id="divShow">
-							<table style="height: 98vh" id="tableBeginning">
+			<div class="offset-xl-3 col-xl-9 col-12 float-left mt-3 w-100" style="background-color: #262729" id="rightPannel">
+				<div class="overflow-auto w-100">
+					<div class="text-center w-100">
+						<div class="w-100" id="divShow">
+							<table class="w-100" style="height: 98vh" id="tableBeginning">
 								<tbody>
 									<tr>
 										<td class="align-middle">
