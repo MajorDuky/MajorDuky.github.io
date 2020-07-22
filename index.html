@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title>MajorDuky's BINGO !</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+	<link rel="icon" href="assets/faviconBingo.png">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+	<div style="height: 98vh; float: left; width: 100%; overflow: hidden" id="loadingIcon">
+		<div class="row">
+			<div class="col-12 text-center">
+				<table style="height: 100vh; width: 100%">
+					<tbody>
+						<tr>
+							<td class="align-middle w-100">
+								<div class="spinner-grow text-info" style="width: 10rem; height: 10rem;" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" style="height: 100vh; display: none" id="mainContent">
+		<div class="row" style="height: 100vh; background-color: #262729">
+			<div class="col-3 fixed-top" style="height: 100vh; background-color: white; box-shadow: 0px 0px 15px white">
+				<table style="height: 100vh;">
+					<tbody>
+						<tr>
+							<td class="align-middle" id="shittyTD">
+								<div class="row text-center">
+									<div class="col-6 h-100">
+										<h1 class="mb-3">BINGO ! </h1>
+									</div>
+									<div class="col-6 pt-2">
+										<a href="https://twitch.tv/MajorDuky"><span class="badge badge-info h1 w-100"
+												id="spanCredit" style="opacity: 0.5;">Revisité by <img
+													src="assets/logoMajorDuky.png" alt="logo de la chaîne MajorDuky"
+													style="width: 15%"></span></a>
+									</div>
+								</div>
+								<button type="button" id="switchRules" class="btn btn-outline-dark w-100 mb-3">Afficher
+									/ Masquer les règles</button>
+								<div id="rules">
+									<h2 class="mb-3">Règles :</h2>
+									<p>Pour jouer à ce bingo rien de plus simple !</p>
+									<p>Dans un premier temps, rentrez vos prévisions <b>UNE PAR UNE</b> dans le champ
+										ci-dessous
+										puis cliquez sur "Ajouter l'option" ou appuyez sur la touche "Entrée".</p>
+									<p>Votre prévision apparaîtra alors à droite de ce volet avec 2 actions :</p>
+									<ul>
+										<li><b>BINGO</b> : Vous avez eu juste sur votre prévision ? SUPER ! Cliquez donc
+											sur
+											ce
+											bouton ! Il augmentera votre nombre de "wins".</li>
+										<li><b>RETIRER</b> : Vous vous êtes trompé dans l'écriture de votre prévision ?
+											Pas
+											de
+											problème, cliquez sur ce bouton et la prévision sera supprimée du pool.</li>
+									</ul>
+								</div>
+
+								<div class="row my-3" id="inputGroup">
+									<div class="col-12">
+										<div class="input-group mb-2 h-100">
+											<div class="input-group-prepend h-100">
+												<div class="input-group-text h-100" style="border-radius: 5px 0 0 0">
+													Votre prévision :</div>
+											</div>
+											<input type="text" name="addBingoOption" id="addBingoOption"
+												class="form-control h-100" placeholder="Ex : Annonce d'un nouveau COD"
+												style="border-radius: 0 5px 0 0">
+										</div>
+									</div>
+									<div class="col-12">
+										<button type="button" id="buttonAdd" class="btn btn-outline-info w-100"
+											style="border-radius: 0 0 5px 5px; border-top: none; border-color: lightgrey">Ajouter
+											l'option</button>
+									</div>
+								</div>
+								<p class="alert alert-danger"><b>ATTENTION</b> ce site a été conçu SANS base de données,
+									TOUT rafraîchissement de cette page entraînera une PERTE de vos prévisions et de
+									votre
+									progression !</p>
+								<div id="countAndWins" class="alert alert-success">
+									<h3 class="alert-heading">Nombre de prévisions justes :</h3>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="offset-3 col-9 float-left mt-3" style="background-color: #262729">
+				<div class="container-fluid overflow-auto">
+					<div class="row text-center justify-content-center">
+						<div id="divShow">
+							<table style="height: 98vh" id="tableBeginning">
+								<tbody>
+									<tr>
+										<td class="align-middle">
+											<p style="color: rgb(184, 183, 183); font-size: 60px">Commencez
+												dès à présent à customiser votre expérience du BINGO revisité ! Suivez
+												les règles dans le volet de gauche pour savoir comment jouer !</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+	<script src="assets/script.js"></script>
+</body>
+
+</html>
